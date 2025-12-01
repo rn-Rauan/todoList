@@ -1,21 +1,37 @@
-// App.js
-import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import TaskListScreen from './screens/TasckListScreen';
-import CreateTaskScreen from './screens/CreateTaskScreen';
-import TaskDetailScreen from './screens/TasckDeteilsScreen';
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 
-const Stack = createNativeStackNavigator();
+import { TaskProvider } from "./src/contexts/TaskContext";
+
+import TaskListScreen from "./src/views/TaskListScreen";
+import TaskDetailScreen from "./src/views/TaskDetailScreen";
+import CreateTaskScreen from "./src/views/CreateTaskScreen";
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="TaskList" component={TaskListScreen} options={{ title: 'To-Do List' }} />
-        <Stack.Screen name="CreateTask" component={CreateTaskScreen} options={{ title: 'Create Task' }} />
-        <Stack.Screen name="TaskDetail" component={TaskDetailScreen} options={{ title: 'Task Details' }} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <TaskProvider>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="TaskList"
+            component={TaskListScreen}
+            options={{ title: "Tarefas" }}
+          />
+          <Stack.Screen
+            name="TaskDetail"
+            component={TaskDetailScreen}
+            options={{ title: "Detalhes" }}
+          />
+          <Stack.Screen
+            name="CreateTask"
+            component={CreateTaskScreen}
+            options={{ title: "Criar tarefa" }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </TaskProvider>
   );
 }
