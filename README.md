@@ -76,7 +76,7 @@ Os testes utilizam Jest e permitem garantir a estabilidade do código mesmo apó
 ### 📌 Requisitos
 
 - Node.js instalado
-- npm ou yarn
+- npm 
 - Expo CLI (opcional)
 
 ### 📥 Passo a passo para rodar o app
@@ -85,11 +85,20 @@ Os testes utilizam Jest e permitem garantir a estabilidade do código mesmo apó
    ```bash
    git clone https://github.com/rn-Rauan/todoList
 2. Acesse a pasta do projeto:
+   ```bash
    cd todoList
 3. Instale as dependências:
-  npm install ou yarn install
+   ```bash
+     npm install
 4. Inicie o app com Expo:
-  npx expo start
+    ```bash
+     npx expo start
 5. Abra o app:
 - No celular: usando Expo Go (Android/iOS)
 - No computador: usando um emulador Android ou simulador iOS
+
+### 🧪 Como Executar os Testes
+1. Na pasta do projeto, execute:
+   ```bash
+   npm test
+
