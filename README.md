@@ -56,7 +56,6 @@ Para simplificar o escopo educacional, o armazenamento das tarefas é feito **em
 
 Foram implementados testes automatizados cobrindo:
 
-- **ViewModel** — validação da lógica de negócio.  
 - **CRUD de tarefas** — garantindo o comportamento correto das operações.
 
 Os testes utilizam Jest e permitem garantir a estabilidade do código mesmo após futuras alterações.
