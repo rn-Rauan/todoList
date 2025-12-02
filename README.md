@@ -50,12 +50,6 @@ O projeto usa **Inversão de Dependência** para fornecer o repositório de tare
 
 Para simplificar o escopo educacional, o armazenamento das tarefas é feito **em memória**, sem banco de dados ou integração com API.
 
-As operações implementadas incluem:
-
-- `createTask()`
-- `getTasks()`
-- `deleteTask()`
-
 ---
 
 ### ✔ Testes Automatizados
