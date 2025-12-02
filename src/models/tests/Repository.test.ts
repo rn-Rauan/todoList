@@ -1,5 +1,5 @@
-import { TaskRepository } from "../models/repository/TaskRepository";
-import { ITask } from "../models/Entities/ITask";
+import { TaskRepository } from "../repository/TaskRepository";
+import { ITask } from "../Entities/ITask";
 
 describe('TaskRepository', () => {
   let repository: TaskRepository;
