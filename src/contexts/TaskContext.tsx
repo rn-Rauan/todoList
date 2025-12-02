@@ -1,13 +1,27 @@
 import React, { createContext, useContext } from "react";
-import { useTaskViewModel } from "../viewmodels/TaskViewModel";
+import { ITaskViewModel } from "../viewmodels/ITaskViewModel";
 
-const TaskContext = createContext<any>(null);
+const TaskContext = createContext<ITaskViewModel | null>(null);
 
-export function TaskProvider({ children }: any) {
-  const taskVM = useTaskViewModel();
-  return <TaskContext.Provider value={taskVM}>{children}</TaskContext.Provider>;
+interface TaskProviderProps {
+  children: React.ReactNode;
+  viewModel: ITaskViewModel; // ← DIP: recebendo a dependência de fora
+}
+
+export function TaskProvider({ children, viewModel }: TaskProviderProps) {
+  return (
+    <TaskContext.Provider value={viewModel}>
+      {children}
+    </TaskContext.Provider>
+  );
 }
 
 export function useTaskVM() {
-  return useContext(TaskContext);
+  const context = useContext(TaskContext);
+
+  if (!context) {
+    throw new Error("useTaskVM deve ser usado dentro de um TaskProvider");
+  }
+
+  return context;
 }
