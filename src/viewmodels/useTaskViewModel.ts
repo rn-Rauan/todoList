@@ -37,12 +37,12 @@ export function useTaskViewModel(
 
   function addTask(task: ITask): void {
     repository.add(task);
-    setTasks(repository.getAll());
+    setTasks(prevTasks => [...prevTasks, task]);
   }
 
   function removeTask(index: number) {
     repository.remove(index);
-    setTasks(repository.getAll());
+    setTasks(prevTasks => prevTasks.filter((_, i) => i !== index));
   }
 
   useEffect(() => {
