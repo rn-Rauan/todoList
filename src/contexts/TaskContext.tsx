@@ -1,5 +1,7 @@
 import React, { createContext, useContext } from "react";
-import { ITaskViewModel } from "../viewmodels/ITaskViewModel";
+import { ITaskViewModel } from "../models/Entities/ITaskViewModel";
+import { TaskRepository } from "../models/repository/TaskRepository";
+import { useTaskViewModel } from "../viewmodels/useTaskViewModel";
 
 const TaskContext = createContext<ITaskViewModel | null>(null);
 
@@ -8,7 +10,11 @@ interface TaskProviderProps {
   viewModel: ITaskViewModel; // ← DIP: recebendo a dependência de fora
 }
 
-export function TaskProvider({ children, viewModel }: TaskProviderProps) {
+export function TaskProvider({ children }: TaskProviderProps) {
+  const repository = new TaskRepository()
+
+  const viewModel = useTaskViewModel(repository)
+
   return (
     <TaskContext.Provider value={viewModel}>
       {children}

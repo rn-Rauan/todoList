@@ -3,7 +3,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import { TaskProvider } from "./src/contexts/TaskContext";
-import { useTaskViewModel } from "./src/viewmodels/useTaskViewModel";
 
 import TaskListScreen from "./src/views/TaskListScreen";
 import TaskDetailScreen from "./src/views/TaskDetailScreen";
@@ -13,10 +12,8 @@ const Stack = createStackNavigator();
 
 export default function App() {
   // Instância concreta do ViewModel (injeção de dependência)
-  const taskVM = useTaskViewModel();
-
   return (
-    <TaskProvider viewModel={taskVM} children={undefined}>
+    <TaskProvider viewModel={undefined!}>
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
