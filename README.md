@@ -15,8 +15,7 @@ O **ToDoList** é um aplicativo desenvolvido com **Expo**, utilizando **React Na
 As principais funcionalidades incluem:
 
 - Adicionar tarefas  
-- Listar tarefas  
-- Marcar tarefas como concluídas  
+- Listar tarefas   
 - Remover tarefas  
 
 O projeto foi desenvolvido com foco em arquitetura, boas práticas de organização e aplicação de testes automatizados.
@@ -55,7 +54,6 @@ As operações implementadas incluem:
 
 - `createTask()`
 - `getTasks()`
-- `toggleTaskDone()`
 - `deleteTask()`
 
 ---
