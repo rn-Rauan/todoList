@@ -3,7 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import { TaskProvider } from "./src/contexts/TaskContext";
-import { useTaskViewModel } from "./src/viewmodels/TaskViewModel";
+import { useTaskViewModel } from "./src/viewmodels/useTaskViewModel";
 
 import TaskListScreen from "./src/views/TaskListScreen";
 import TaskDetailScreen from "./src/views/TaskDetailScreen";
